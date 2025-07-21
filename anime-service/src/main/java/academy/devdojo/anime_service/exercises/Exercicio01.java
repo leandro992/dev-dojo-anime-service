@@ -1,4 +1,4 @@
-package academy.devdojo.anime_service.controllers;
+package academy.devdojo.anime_service.exercises;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,7 @@ public class Exercicio01 {
 
     @GetMapping("/v1/heroes/filter")
     List<String> listHeroes(@RequestParam String name){
-        return HEROES;
+        return HEROES.stream().filter(hero -> hero.equalsIgnoreCase(name)).toList();
     }
 
 
